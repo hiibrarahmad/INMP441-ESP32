@@ -300,6 +300,48 @@ File saved as /recording.wav
 
 ---
 
+## 🧹 Clearing Storage: Formatting SPIFFS
+
+If you need to **delete previous recordings** and start fresh, you must format the SPIFFS storage. This ensures old files are removed before recording new audio.
+
+### 🔹 How to Format SPIFFS
+
+1️⃣ Upload the following code to your ESP32 to **clear all stored files**:
+
+```cpp
+#include <SPIFFS.h>
+
+void setup() {
+  Serial.begin(115200);
+
+  if (!SPIFFS.begin(true)) {
+    Serial.println("SPIFFS initialization failed!");
+    return;
+  }
+
+  Serial.println("SPIFFS Mounted Successfully!");
+
+  // Format the SPIFFS
+  Serial.println("Formatting SPIFFS...");
+  bool formatted = SPIFFS.format();
+
+  if (formatted) {
+    Serial.println("SPIFFS formatted successfully.");
+  } else {
+    Serial.println("SPIFFS formatting failed.");
+  }
+}
+
+void loop() {
+  // Nothing to do here
+}
+```
+
+2️⃣ After running the code, **re-upload the main recording sketch** to start fresh.  
+3️⃣ The ESP32 is now ready to **record a new audio file** without old data interfering.
+
+---
+
 ## 📝 Notes & Optimization Tips
 
 - 🎵 **Recording duration:** Default is **20 seconds** but can be modified.

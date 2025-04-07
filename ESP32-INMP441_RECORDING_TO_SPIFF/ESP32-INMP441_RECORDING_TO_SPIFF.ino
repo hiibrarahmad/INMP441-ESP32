@@ -1,8 +1,8 @@
 #include <driver/i2s.h>
 #include <SPIFFS.h>
 
-#define I2S_WS 25
-#define I2S_SD 32
+#define I2S_WS 27
+#define I2S_SD 35
 #define I2S_SCK 33
 #define I2S_PORT I2S_NUM_0
 #define I2S_SAMPLE_RATE   (16000)

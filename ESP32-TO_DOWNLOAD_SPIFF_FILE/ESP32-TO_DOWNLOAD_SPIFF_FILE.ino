@@ -4,7 +4,7 @@
 #include <WebServer.h>
 
 const char* ssid = "ibrar";
-const char* password = "ibrarahmad";
+const char* password = "123456789";
 
 WebServer server(80);
 

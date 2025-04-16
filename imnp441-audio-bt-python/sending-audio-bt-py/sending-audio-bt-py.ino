@@ -3,9 +3,13 @@
 #include "a2dp_sink.h"
 
 // Digital I/O used
-#define I2S_DOUT      25
-#define I2S_LRC       26
-#define I2S_BCLK      27
+#define I2S_DOUT      33
+#define I2S_LRC       32
+#define I2S_BCLK      35
+
+// #define I2S_BCLK 35
+// #define I2S_LRCK 32
+// #define I2S_DOUT 33
 
 char BT_SINK_NAME[]   = "ESP32-SPEAKER"; // sink devicename
 
